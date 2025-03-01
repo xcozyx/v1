@@ -1,30 +1,31 @@
 #!/bin/bash
-get_vps_ip() {
-    curl -s https://ipinfo.io/ip
+NC="\e[0m"
+RED="\033[0;31m"
+COLOR1="$(cat /etc/rmbl/theme/$colornow | grep -w "TEXT" | cut -d: -f2|sed 's/ //g')"
+COLBG1="$(cat /etc/rmbl/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ //g')"
+WH='\033[1;37m'
+ipsaya=$(wget -qO- ifconfig.me/ip)
+data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
+date_list=$(date +"%Y-%m-%d" -d "$data_server")
+data_ip="https://raw.githubusercontent.com/xcozyx/iz/main/ip"
+checking_sc() {
+useexp=$(curl -sS $data_ip | grep $ipsaya | awk '{print $3}')
+if [[ $date_list < $useexp ]]; then
+echo -ne
+else
+echo -e "$COLOR1╭═════════════════════════════════════════════════╮${NC}"
+echo -e "$COLOR1 ${NC} ${COLBG1}          ${WH}• AUTOSCRIPT PREMIUM •               ${NC} $COLOR1 $NC"
+echo -e "$COLOR1╰═════════════════════════════════════════════════╯${NC}"
+echo -e "$COLOR1╭═════════════════════════════════════════════════╮${NC}"
+echo -e "$COLOR1│            ${RED}PERMISSION DENIED !${NC}                  │"
+echo -e "$COLOR1│   \033[0;33mYour VPS${NC} $ipsaya \033[0;33mHas been Banned${NC}           │"
+echo -e "$COLOR1│     \033[0;33mBuy access permissions for scripts${NC}          │"
+echo -e "$COLOR1│             \033[0;33mContact Your Admin ${NC}                 │"
+echo -e "$COLOR1╰═════════════════════════════════════════════════╯${NC}"
+exit
+fi
 }
-
-check_ip_permission() {
-    VPS_IP=$(get_vps_ip)
-    ACCESS_URL="https://raw.githubusercontent.com/xcozyx/iz/main/access"
-
-    echo "Mengecek izin untuk ip $VPS_IP"
-	sleep 2
-	clear
-    ACCESS_LIST=$(curl -s $ACCESS_URL)
-
-    MATCH=$(echo "$ACCESS_LIST" | grep -w "^$VPS_IP")
-
-    if [ -n "$MATCH" ]; then
-        COMMENTS=$(echo "$MATCH" | cut -d'#' -f2-)
-		clear
-    else
-        echo "Sepertinya anda tidak memiliki ijin untuk menggunakan autoscript ini"
-        echo "Silakan hubungi @November2k atau gunakan script asli dari dugong-lewat."
-        exit 1
-    fi
-}
-
-check_ip_permission
+checking_sc
 rm -rf install.sh
 clear
 NC='\e[0m'       # No Color (mengatur ulang warna teks ke default)
