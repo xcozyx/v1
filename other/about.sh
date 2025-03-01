@@ -1,0 +1,25 @@
+#!/bin/bash
+
+clear
+echo ""
+echo ""
+echo -e "—————————————————————————————"
+echo -e "   »»» Protocol Service «««  "
+echo -e "—————————————————————————————"
+echo -e "Vmess Websocket     : 443 & 80"
+echo -e "Vmess HTTPupgrade   : 443 & 80"
+echo -e "Vmess gRPC          : 443"
+echo ""
+echo -e "Vless XTLS-Vision   : 443"
+echo -e "Vless Websocket     : 443 & 80"
+echo -e "Vless HTTPupgrade   : 443 & 80"
+echo -e "Vless gRPC          : 443"
+echo ""
+echo -e "Trojan TCP TLS      : 443"
+echo -e "Trojan Websocket    : 443 & 80"
+echo -e "Trojan HTTPupgrade  : 443 & 80"
+echo -e "Trojan gRPC         : 443"
+echo -e "—————————————————————————————"
+echo ""
+read -n 1 -s -r -p "Press any key to back on menu"
+menu
