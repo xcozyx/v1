@@ -89,7 +89,7 @@ else
 status_xray="${RED}OFF${NC}"
 fi
 # TOTAL CREATE ACC VMESS
-vmess=$(grep -c -E "^#v&@ " "/usr/local/etc/xray/config/04_inbounds.json")
+vmess=$(grep -c -E "^#&@ " "/usr/local/etc/xray/config/04_inbounds.json")
 uphours=`uptime -p | awk '{print $2,$3}' | cut -d , -f1`
 upminutes=`uptime -p | awk '{print $4,$5}' | cut -d , -f1`
 uptimecek=`uptime -p | awk '{print $6,$7}' | cut -d , -f1`
@@ -132,7 +132,7 @@ echo -e " $COLOR1 ${WH}Upload${NC}     ${WH}$today_rx $today_rxv     $yesterday_
 echo -e " $COLOR1 ${COLOR1}Total${NC}    ${COLOR1}  $todayd $today_v     $yesterday $yesterday_v    $month $month_v  ${NC} "
 echo -e "$COLOR1└───────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌───────────────────────────────────────────────────┐${NC}"
-echo -e "  ${WH}[${COLOR1}1${WH}]${NC} ${COLOR1}• ${WH}XRAY    ${WH}[${COLOR1}${status_ws}${WH}]   ${WH}[${COLOR1}4${WH}]${NC} ${COLOR1}• ${WH}UPDATE CORE ${WH}[${COLOR1}Menu${WH}]  $COLOR1 $NC"   
+echo -e "  ${WH}[${COLOR1}1${WH}]${NC} ${COLOR1}• ${WH}XRAY MENU   ${WH}[${COLOR1}${status_xray}${WH}]   ${WH}[${COLOR1}4${WH}]${NC} ${COLOR1}• ${WH}UPDATE CORE ${WH}[${COLOR1}Menu${WH}]  $COLOR1 $NC"   
 echo -e "  ${WH}[${COLOR1}2${WH}]${NC} ${COLOR1}• ${WH}DOMAIN    ${WH}[${COLOR1}${status_xray}${WH}]   ${WH}[${COLOR1}5${WH}]${NC} ${COLOR1}• ${WH}INFO SCRIPT ${WH}[${COLOR1}Menu${WH}]  $COLOR1 $NC"  
 echo -e "  ${WH}[${COLOR1}3${WH}]${NC} ${COLOR1}• ${WH}SPEEDTEST    ${WH}[${COLOR1}${status_xray}${WH}]   ${WH}[${COLOR1}6${WH}]${NC} ${COLOR1}• ${WH}UPDATE SCRIPT${WH}[${COLOR1}Menu${WH}]  $COLOR1 $NC"  
 #echo -e "  ${WH}[${COLOR1}04${WH}]${NC} ${COLOR1}• ${WH}TROJAN   ${WH}[${COLOR1}${status_xray}${WH}]   ${WH}[${COLOR1}12${WH}]${NC} ${COLOR1}• ${WH}SYSTEM    ${WH}[${COLOR1}Menu${WH}]  $COLOR1 $NC"  
