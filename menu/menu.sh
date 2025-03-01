@@ -98,7 +98,7 @@ cekup=`uptime -p | grep -ow "day"`
 show_menu() {
     clear
 echo -e "$COLOR1┌───────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC} ${COLBG1}               ${WH}• XCOZY PROJECT •              ${NC} $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                ${WH}• XCOZY PROJECT •              ${NC} $COLOR1 $NC"
 echo -e "$COLOR1└───────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌───────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│$NC${WH} ❄️ OS            ${COLOR1}: ${WH}$MODEL2${NC}"
@@ -117,7 +117,7 @@ echo -e "$COLOR1└────────────────────�
 #echo -e "$COLOR1 $NC ${WH}[ DROPBEAR : ${status_beruangjatuh} ${WH}]  ${WH}[ UDPC : ${status_udp} ${WH}]$NC"
 #echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌───────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1 $NC ${WH}[ NGINX : ${status_nginx} ${WH}] ${WH}[ XRAY : ${status_xray} ${WH}]${WH}[ AKUN AKTIF : ${COLOR1}${vmess} ]$NC"
+echo -e "$COLOR1 $NC ${WH}[ NGINX : ${status_nginx} ${WH}] ${WH}[ XRAY : ${status_xray} ${WH}] ${WH}[ AKUN AKTIF : ${COLOR1}${vmess} ]$NC"
 #echo -e "$COLOR1 $NC ${WH}[ DROPBEAR : ${status_beruangjatuh} ${WH}] ${WH}[ UDPC : ${status_udp} ${WH}]${WH} USAGE RAM : ${uram} $NC"
 echo -e "$COLOR1└───────────────────────────────────────────────────┘${NC}"
 #echo -e "$COLOR1┌───────────────────────────────────────────────────┐${NC}"
@@ -132,26 +132,20 @@ echo -e " $COLOR1 ${WH}Upload${NC}     ${WH}$today_rx $today_rxv     $yesterday_
 echo -e " $COLOR1 ${COLOR1}Total${NC}    ${COLOR1}  $todayd $today_v     $yesterday $yesterday_v    $month $month_v  ${NC} "
 echo -e "$COLOR1└───────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌───────────────────────────────────────────────────┐${NC}"
-echo -e "  ${WH}[${COLOR1}1${WH}]${NC} ${COLOR1}• ${WH}XRAY MENU   ${WH}[${COLOR1}${status_xray}${WH}]   ${WH}[${COLOR1}4${WH}]${NC} ${COLOR1}• ${WH}UPDATE CORE ${WH}[${COLOR1}Menu${WH}]  $COLOR1 $NC"   
-echo -e "  ${WH}[${COLOR1}2${WH}]${NC} ${COLOR1}• ${WH}DOMAIN    ${WH}[${COLOR1}${status_xray}${WH}]   ${WH}[${COLOR1}5${WH}]${NC} ${COLOR1}• ${WH}INFO SCRIPT ${WH}[${COLOR1}Menu${WH}]  $COLOR1 $NC"  
-echo -e "  ${WH}[${COLOR1}3${WH}]${NC} ${COLOR1}• ${WH}SPEEDTEST    ${WH}[${COLOR1}${status_xray}${WH}]   ${WH}[${COLOR1}6${WH}]${NC} ${COLOR1}• ${WH}UPDATE SCRIPT${WH}[${COLOR1}Menu${WH}]  $COLOR1 $NC"  
+echo -e "  ${WH}[${COLOR1}1${WH}]${NC} ${COLOR1}• ${WH}XRAY MENU   ${WH}   ${WH}[${COLOR1}4${WH}]${NC} ${COLOR1}• ${WH}UPDATE CORE ${WH}  $COLOR1 $NC"   
+echo -e "  ${WH}[${COLOR1}2${WH}]${NC} ${COLOR1}• ${WH}DOMAIN    ${WH}   ${WH}[${COLOR1}5${WH}]${NC} ${COLOR1}• ${WH}INFO SCRIPT ${WH}  $COLOR1 $NC"  
+echo -e "  ${WH}[${COLOR1}3${WH}]${NC} ${COLOR1}• ${WH}SPEEDTEST    ${WH}   ${WH}[${COLOR1}6${WH}]${NC} ${COLOR1}• ${WH}UPDATE SCRIPT${WH}  $COLOR1 $NC"  
 #echo -e "  ${WH}[${COLOR1}04${WH}]${NC} ${COLOR1}• ${WH}TROJAN   ${WH}[${COLOR1}${status_xray}${WH}]   ${WH}[${COLOR1}12${WH}]${NC} ${COLOR1}• ${WH}SYSTEM    ${WH}[${COLOR1}Menu${WH}]  $COLOR1 $NC"  
 #echo -e "  ${WH}[${COLOR1}05${WH}]${NC} ${COLOR1}• ${WH}NOOBZ    ${WH}[${COLOR1}${stat_noobz}${WH}]   ${WH}[${COLOR1}13${WH}]${NC} ${COLOR1}• ${WH}BACKUP    ${WH}[${COLOR1}Menu${WH}]  $COLOR1 $NC"
 #echo -e "  ${WH}[${COLOR1}06${WH}]${NC} ${COLOR1}• ${WH}TRJN-GO  ${WH}[${COLOR1}${status_xray}${WH}]   ${WH}[${COLOR1}14${WH}]${NC} ${COLOR1}• ${WH}RESTART   ${WH}[${COLOR1}Menu${WH}]  $COLOR1 $NC"
 #echo -e "  ${WH}[${COLOR1}07${WH}]${NC} ${COLOR1}• ${WH}RUNNING  ${WH}[${COLOR1}${status_xray}${WH}]   ${WH}[${COLOR1}15${WH}]${NC} ${COLOR1}• ${WH}REBOOT    ${WH}[${COLOR1}Menu${WH}]  $COLOR1 $NC"
 #echo -e "  ${WH}[${COLOR1}08${WH}]${NC} ${COLOR1}• ${WH}CEK Net  ${WH}[${COLOR1}${status_xray}${WH}]   ${WH}[${COLOR1}16${WH}]${NC} ${COLOR1}• ${WH}PASSWORD  ${WH}[${COLOR1}Menu${WH}]  $COLOR1 $NC"
 echo -e "$COLOR1└───────────────────────────────────────────────────┘${NC}"
-    python /usr/bin/system_info.py
-    printf " [1] Xray Menu              [4] Update Core\n"
-    printf " [2] Domain Setup           [5] Info Script\n"
-    printf " [3] Speedtest              [6] Update Script\n"
-    printf "+-------------------------------------------------------+"
-    echo -e ""
 }
 
 # Fungsi untuk menangani input menu
 handle_menu() {
-    read -p "[ root ] t.me/November2k~# " opt
+    read -p "[ root ] xcozy " opt
     printf "+-------------------------------------------------------+"
     echo -e ""
     case $opt in
