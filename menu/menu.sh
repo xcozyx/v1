@@ -12,8 +12,8 @@ DATE2=$(date -R | cut -d " " -f -5)
 MYIP=$(wget -qO- ifconfig.me/ip)
 tram=$( free -h | awk 'NR==2 {print $2}' )
 uram=$( free -h | awk 'NR==2 {print $3}' )
-ISP=$(cat /etc/xray/isp)
-CITY=$(cat /etc/xray/city)
+ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
+CITY=$(curl -s ipinfo.io/city )
 author=$(cat /etc/profil)
 
 MODEL2=$(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')
@@ -89,11 +89,7 @@ else
 status_xray="${RED}OFF${NC}"
 fi
 # TOTAL CREATE ACC VMESS
-vmess=$(grep -c -E "^#vmg " "/etc/xray/config.json")
-# TOTAL CREATE ACC VLESS
-vless=$(grep -c -E "^#vlg " "/etc/xray/config.json")
-# TOTAL CREATE ACC TROJAN
-trtls=$(grep -c -E "^#trg " "/etc/xray/config.json")
+vmess=$(grep -c -E "^#v&@ " "/usr/local/etc/xray/config/04_inbounds.json")
 uphours=`uptime -p | awk '{print $2,$3}' | cut -d , -f1`
 upminutes=`uptime -p | awk '{print $4,$5}' | cut -d , -f1`
 uptimecek=`uptime -p | awk '{print $6,$7}' | cut -d , -f1`
@@ -113,7 +109,7 @@ echo -e "$COLOR1│$NC${WH} ❄️ UPTIME        ${COLOR1}: ${WH}$uphours $upmin
 echo -e "$COLOR1│$NC${WH} ❄️ ISP           ${COLOR1}: ${WH}$ISP${NC}"
 echo -e "$COLOR1│$NC${WH} ❄️ City          ${COLOR1}: ${WH}$CITY${NC}"
 echo -e "$COLOR1│$NC${WH} ❄️ IP VPS        ${COLOR1}: ${WH}$MYIP${NC}"
-echo -e "$COLOR1│$NC${WH} ❄️ DOMAIN        ${COLOR1}: ${WH}$(cat /etc/xray/domain)"
+#echo -e "$COLOR1│$NC${WH} ❄️ DOMAIN        ${COLOR1}: ${WH}$(cat /etc/xray/domain)"
 #echo -e "$COLOR1│$NC${WH} ❄️ NSDomain      ${COLOR1}: ${WH}$(cat /etc/xray/dns)"
 echo -e "$COLOR1└───────────────────────────────────────────────────┘${NC}"
 #echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
@@ -121,14 +117,14 @@ echo -e "$COLOR1└────────────────────�
 #echo -e "$COLOR1 $NC ${WH}[ DROPBEAR : ${status_beruangjatuh} ${WH}]  ${WH}[ UDPC : ${status_udp} ${WH}]$NC"
 #echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌───────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1 $NC ${WH}[ NGINX    : ${status_nginx} ${WH}] ${WH}[ XRAY : ${status_xray} ${WH}]${WH} USAGE CPU : ${cpu_usage} $NC"
+echo -e "$COLOR1 $NC ${WH}[ NGINX    : ${status_nginx} ${WH}] ${WH}[ XRAY : ${status_xray} ${WH}]${WH} AKUN AKTIF : ${vmess} $NC"
 #echo -e "$COLOR1 $NC ${WH}[ DROPBEAR : ${status_beruangjatuh} ${WH}] ${WH}[ UDPC : ${status_udp} ${WH}]${WH} USAGE RAM : ${uram} $NC"
 echo -e "$COLOR1└───────────────────────────────────────────────────┘${NC}"
-echo -e "$COLOR1┌───────────────────────────────────────────────────┐${NC}"
-printf "            \033[1;37m%-16s ${COLOR1}%-4s${NC} ${WH}%-5s\e[0m\n" " VMESS/WS    =" "$vmess" "ACCOUNT "
-printf "            \033[1;37m%-16s ${COLOR1}%-4s${NC} ${WH}%-5s\e[0m\n" " VLESS/WS    =" "$vless" "ACCOUNT "
-printf "            \033[1;37m%-16s ${COLOR1}%-4s${NC} ${WH}%-5s\e[0m\n" " TROJAN/GRPC =" "$trtls" "ACCOUNT "
-echo -e "$COLOR1└───────────────────────────────────────────────────┘${NC}"
+#echo -e "$COLOR1┌───────────────────────────────────────────────────┐${NC}"
+#printf "            \033[1;37m%-16s ${COLOR1}%-4s${NC} ${WH}%-5s\e[0m\n" " VMESS/WS    =" "$vmess" "ACCOUNT "
+#printf "            \033[1;37m%-16s ${COLOR1}%-4s${NC} ${WH}%-5s\e[0m\n" " VLESS/WS    =" "$vless" "ACCOUNT "
+#printf "            \033[1;37m%-16s ${COLOR1}%-4s${NC} ${WH}%-5s\e[0m\n" " TROJAN/GRPC =" "$trtls" "ACCOUNT "
+#echo -e "$COLOR1└───────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌───────────────────────────────────────────────────┐${NC}"
 echo -e " $COLOR1 ${COLOR1}Traffic${NC}      ${COLOR1}Today       Yesterday       Month   ${NC}"
 echo -e " $COLOR1 ${WH}Download${NC}   ${WH}$today_tx $today_txv     $yesterday_tx $yesterday_txv    $month_tx $month_txv   ${NC}"
