@@ -14,7 +14,6 @@ tram=$( free -h | awk 'NR==2 {print $2}' )
 uram=$( free -h | awk 'NR==2 {print $3}' )
 ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
 CITY=$(curl -s ipinfo.io/city )
-author=$(cat /etc/profil)
 
 MODEL2=$(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')
 LOADCPU=$(printf '%-0.00001s' "$(top -bn1 | awk '/Cpu/ { cpu = "" 100 - $8 "%" }; END { print cpu }')")
@@ -133,7 +132,7 @@ echo -e " $COLOR1 ${COLOR1}Total${NC}    ${COLOR1}  $todayd $today_v     $yester
 echo -e "$COLOR1└───────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌───────────────────────────────────────────────────┐${NC}"
 echo -e "  ${WH}[${COLOR1}1${WH}]${NC} ${COLOR1}• ${WH}XRAY MENU   ${WH}   ${WH}[${COLOR1}4${WH}]${NC} ${COLOR1}• ${WH}UPDATE CORE ${WH}  $COLOR1 $NC"   
-echo -e "  ${WH}[${COLOR1}2${WH}]${NC} ${COLOR1}• ${WH}DOMAIN    ${WH}   ${WH}[${COLOR1}5${WH}]${NC} ${COLOR1}• ${WH}INFO SCRIPT ${WH}  $COLOR1 $NC"  
+echo -e "  ${WH}[${COLOR1}2${WH}]${NC} ${COLOR1}• ${WH}SET DOMAIN    ${WH}   ${WH}[${COLOR1}5${WH}]${NC} ${COLOR1}• ${WH}INFO SCRIPT ${WH}  $COLOR1 $NC"  
 echo -e "  ${WH}[${COLOR1}3${WH}]${NC} ${COLOR1}• ${WH}SPEEDTEST    ${WH}   ${WH}[${COLOR1}6${WH}]${NC} ${COLOR1}• ${WH}UPDATE SCRIPT${WH}  $COLOR1 $NC"  
 #echo -e "  ${WH}[${COLOR1}04${WH}]${NC} ${COLOR1}• ${WH}TROJAN   ${WH}[${COLOR1}${status_xray}${WH}]   ${WH}[${COLOR1}12${WH}]${NC} ${COLOR1}• ${WH}SYSTEM    ${WH}[${COLOR1}Menu${WH}]  $COLOR1 $NC"  
 #echo -e "  ${WH}[${COLOR1}05${WH}]${NC} ${COLOR1}• ${WH}NOOBZ    ${WH}[${COLOR1}${stat_noobz}${WH}]   ${WH}[${COLOR1}13${WH}]${NC} ${COLOR1}• ${WH}BACKUP    ${WH}[${COLOR1}Menu${WH}]  $COLOR1 $NC"
@@ -145,7 +144,7 @@ echo -e "$COLOR1└────────────────────�
 
 # Fungsi untuk menangani input menu
 handle_menu() {
-    read -p "[ root ] xcozy " opt
+    read -p "[ root ] xcozy~# " opt
     printf "+-------------------------------------------------------+"
     echo -e ""
     case $opt in

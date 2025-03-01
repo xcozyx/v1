@@ -8,9 +8,8 @@ generate_random_string() {
 
 # Fungsi untuk menghasilkan UUID
 generate_uuid() {
-    #cat /proc/sys/kernel/random/uuid
-    read -p " Masukkan UUID (kosongi buat random) : " uuid
     [[ -z "$uuid" ]] && uuid=$(cat /proc/sys/kernel/random/uuid)
+    #cat /proc/sys/kernel/random/uuid
 }
 
 # Fungsi untuk menambahkan konfigurasi ke file Xray
@@ -29,7 +28,7 @@ pwtr=$(openssl rand -hex 4)
 echo -e "————————————————————————————"
 
 read -p "Masukan username: " user
-
+read -p " Masukkan UUID (kosongi buat random) : " uuid
 valid_input=false
 
 while [ "$valid_input" = false ]; do
