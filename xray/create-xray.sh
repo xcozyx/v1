@@ -23,7 +23,8 @@ add_xray_config() {
 
 domain=$(cat /usr/local/etc/xray/dns/domain)
 uuid=$(generate_uuid)
-pwtr=$(openssl rand -hex 4)
+pwtr=$(generate_uuid)
+#pwtr=$(openssl rand -hex 4)
 
 echo -e "————————————————————————————"
 
