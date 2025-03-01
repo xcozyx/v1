@@ -117,7 +117,7 @@ echo -e "$COLOR1└────────────────────�
 #echo -e "$COLOR1 $NC ${WH}[ DROPBEAR : ${status_beruangjatuh} ${WH}]  ${WH}[ UDPC : ${status_udp} ${WH}]$NC"
 #echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌───────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1 $NC ${WH}[ NGINX    : ${status_nginx} ${WH}] ${WH}[ XRAY : ${status_xray} ${WH}]${WH} AKUN AKTIF : ${vmess} $NC"
+echo -e "$COLOR1 $NC ${WH}[ NGINX : ${status_nginx} ${WH}] ${WH}[ XRAY : ${status_xray} ${WH}]${WH}[ AKUN AKTIF : ${COLOR1}${vmess} ]$NC"
 #echo -e "$COLOR1 $NC ${WH}[ DROPBEAR : ${status_beruangjatuh} ${WH}] ${WH}[ UDPC : ${status_udp} ${WH}]${WH} USAGE RAM : ${uram} $NC"
 echo -e "$COLOR1└───────────────────────────────────────────────────┘${NC}"
 #echo -e "$COLOR1┌───────────────────────────────────────────────────┐${NC}"
